@@ -1,0 +1,40 @@
+﻿@model OnlineShoppingStore.WebUI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<div class="panel panel-default">*@
+    @*<div class="panel-heading">
+            <h3>Log In</h3>
+        </div>*@
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="http://ashfaqur-001-site1.gtempurl.com">
+            <span class="hidden-xs">Online Shopping Store</span>
+            <div class="visible-xs">Online</div>
+            <div class="visible-xs">Shopping</div>
+            <div class="visible-xs">Store</div>
+        </a>
+        <a class="navbar-brand navbar-right" href="http://ashfaqur-001-site1.gtempurl.com/Admin/Index">Log In</a>
+    </div>
+    <div class="panel-body col-lg-4 col-lg-offset-4">
+        <p class="lead">
+            Please Log in to Access the Administration area:
+        </p>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>User Name:</label>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+            <input type="submit" value="Log in" class="btn btn-primary" />
+        }
+    </div>
+@*</div>*@
+

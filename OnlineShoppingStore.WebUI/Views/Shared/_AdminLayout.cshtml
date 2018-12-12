@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @{
+            var userName = HttpContext.Current.User.Identity.Name;
+            if (userName != "")
+            {
+        <div class="navbar navbar-inverse" role="navigation">
+            <a class="navbar-brand" href="http://ashfaqur-001-site1.gtempurl.com">
+                <span class="hidden-xs">Online Shopping Store</span>
+                <div class="visible-xs">Online</div>
+                <div class="visible-xs">Shopping</div>
+                <div class="visible-xs">Store</div>
+            </a>
+            <a class="navbar-brand navbar-right" href="http://ashfaqur-001-site1.gtempurl.com/Account/Logout">Log Out</a>
+            <div class="navbar-brand navbar-right">@userName</div>
+        </div>
+                @*<div class="navbar navbar-inverse" role="navigation">
+                    <div class="navbar-brand">
+                        <span class="hidden-xs">Admin Panel</span>
+                        <div class="visible-xs">Online</div>
+                        <div class="visible-xs">Shopping</div>
+                        <div class="visible-xs">Store</div>
+                    </div>
+                    <div class="navbar-brand navbar-right">@Html.ActionLink("Log Out", "Logout", "Account")<</div>
+                    <div class="navbar-brand navbar-right">@userName</div>
+                </div>*@
+
+            }
+        }
+
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success text-center">@TempData["message"]</div>
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>
