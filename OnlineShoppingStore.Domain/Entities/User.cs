@@ -12,5 +12,6 @@ namespace OnlineShoppingStore.Domain.Entities
         [Key]
         public string UserId { get; set; }
         public string Password { get; set; }
+        public string Type { get; set; }
     }
 }
